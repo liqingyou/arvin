@@ -10,21 +10,20 @@ const chartData = ref([])
 
 async function fetchContent() {
   try {
-    const { data } = await axios.get('https://m3test.2loveyou.com/spin/test/player_read/online_data?limit=25')
+    const { data } = await axios.get('https://m3test.2loveyou.com/spin/test/player_read/online_data?limit=30')
     chartData.value = data.result.map((item: any) => ({
       date: item.date,
       onlineNum: item.onlineNum,
     }))
+    updateChart() // Call updateChart after fetching new data
   }
   catch (error) {
     console.error('Error fetching profile content:', error)
   }
 }
 
-onMounted(async () => {
-  await fetchContent()
-  const charEle = document.getElementById('char') as HTMLElement
-  const charEch: ECharts = init(charEle)
+function updateChart() {
+  const charEch: ECharts = init(document.getElementById('char') as HTMLElement)
   const option: EChartsOption = {
     xAxis: {
       type: 'category',
@@ -41,6 +40,15 @@ onMounted(async () => {
     ],
   }
   charEch.setOption(option)
+}
+
+onMounted(async () => {
+  await fetchContent() // Initial fetch when component is mounted
+
+  // Set up interval to fetch new data every minute
+  setInterval(async () => {
+    await fetchContent()
+  }, 60000) // 60000 milliseconds = 1 minute
 })
 </script>
 
