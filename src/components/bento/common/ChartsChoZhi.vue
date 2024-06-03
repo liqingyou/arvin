@@ -30,6 +30,15 @@ async function fetchContent() {
 function updateChart() {
   const charEch: ECharts = init(document.getElementById('char-cho-zhi') as HTMLElement)
   const option: EChartsOption = {
+    title: {
+      text: 'Income Line',
+    },
+    tooltip: {
+      trigger: 'axis',
+    },
+    legend: {
+      data: ['google', 'apple', 'jl'],
+    },
     xAxis: {
       type: 'category',
       data: chartData.value.map((item: TjOnline) => item.date),
@@ -42,16 +51,19 @@ function updateChart() {
         data: chartData.value.map((item: TjOnline) => item.google),
         name: 'google',
         type: 'line',
+        stack: 'Total',
       },
       {
         data: chartData.value.map((item: TjOnline) => item.apple),
         name: 'apple',
         type: 'line',
+        stack: 'Total',
       },
       {
         data: chartData.value.map((item: TjOnline) => item.jl),
         name: 'jl',
         type: 'line',
+        stack: 'Total',
       },
     ],
   }
@@ -70,12 +82,12 @@ onMounted(async () => {
 
 <template>
   <ShadowCard class="!p-[5px]">
-    <div id="char-cho-zhi" />
+    <div id="char-cho-zhi" class="char-cls" />
   </ShadowCard>
 </template>
 
 <style scoped>
-#char {
+.char-cls {
   z-index: 100;
   width: 100%;
   height: 100%;
