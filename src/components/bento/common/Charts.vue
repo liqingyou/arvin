@@ -15,10 +15,11 @@ interface TjOnline {
 }
 
 const chartData = ref([])
+const limitData = ref(30)
 
 async function fetchContent() {
   try {
-    const { data } = await axios.get('https://m3test.2loveyou.com/spin/test/player_read/online_data?limit=30')
+    const { data } = await axios.get(`https://m3test.2loveyou.com/spin/test/player_read/online_data?limit=${limitData.value}`)
     chartData.value = data.result.reverse().map((item: TjOnline) => ({
       date: item.date,
       onlineNum: item.onlineNum,
@@ -66,6 +67,10 @@ onMounted(async () => {
 
 <template>
   <ShadowCard class="!p-[5px]">
+    <div>
+      数量:
+      <input v-model="limitData" type="number">
+    </div>
     <div id="char" />
   </ShadowCard>
 </template>
