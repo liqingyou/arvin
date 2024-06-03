@@ -25,6 +25,10 @@ async function fetchContent() {
 function updateChart() {
   const charEch: ECharts = init(document.getElementById('char') as HTMLElement)
   const option: EChartsOption = {
+    darkMode: 'auto',
+    title: {
+      text: 'Online Line',
+    },
     xAxis: {
       type: 'category',
       data: chartData.value.map(item => item.date),
@@ -39,7 +43,7 @@ function updateChart() {
       },
     ],
   }
-  charEch.setOption(option)
+  charEch.setOption(option, dark)
 }
 
 onMounted(async () => {
