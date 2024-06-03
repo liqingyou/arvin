@@ -6,12 +6,20 @@ import type { ECharts, EChartsOption } from 'echarts'
 import { init } from 'echarts'
 import axios from 'axios'
 
+interface TjOnline {
+  date: string
+  onlineNum: number
+  google: number
+  apple: number
+  jl: number
+}
+
 const chartData = ref([])
 
 async function fetchContent() {
   try {
     const { data } = await axios.get('https://m3test.2loveyou.com/spin/test/player_read/online_data?limit=30')
-    chartData.value = data.result.reverse().map((item: any) => ({
+    chartData.value = data.result.reverse().map((item: TjOnline) => ({
       date: item.date,
       onlineNum: item.onlineNum,
     }))
@@ -31,14 +39,14 @@ function updateChart() {
     },
     xAxis: {
       type: 'category',
-      data: chartData.value.map(item => item.date),
+      data: chartData.value.map((item: TjOnline) => item.date),
     },
     yAxis: {
       type: 'value',
     },
     series: [
       {
-        data: chartData.value.map(item => item.onlineNum),
+        data: chartData.value.map((item: TjOnline) => item.onlineNum),
         type: 'line',
       },
     ],
