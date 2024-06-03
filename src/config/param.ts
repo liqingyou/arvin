@@ -47,6 +47,7 @@ export const bentoCommonComponentsCfg = [
   { id: 'Notion', x: 3, y: 2, width: 1, height: 1, index: 0 },
   { id: 'PageTransition', x: 4, y: 2, width: 1, height: 1, index: 0 },
   { id: 'Charts', x: 0, y: 0, width: 3, height: 2, index: 0 },
+  { id: 'ChartsChoZhi', x: 0, y: 0, width: 3, height: 2, index: 0 },
 ]
 
 /**
