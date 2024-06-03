@@ -28,7 +28,7 @@ async function fetchContent() {
 }
 
 function updateChart() {
-  const charEch: ECharts = init(document.getElementById('char') as HTMLElement)
+  const charEch: ECharts = init(document.getElementById('char-cho-zhi') as HTMLElement)
   const option: EChartsOption = {
     xAxis: {
       type: 'category',
@@ -64,13 +64,13 @@ onMounted(async () => {
   // Set up interval to fetch new data every minute
   setInterval(async () => {
     await fetchContent()
-  }, 60000) // 60000 milliseconds = 1 minute
+  }, 300000) // 60000 milliseconds = 1 minute
 })
 </script>
 
 <template>
   <ShadowCard class="!p-[5px]">
-    <div id="char" />
+    <div id="char-cho-zhi" />
   </ShadowCard>
 </template>
 
