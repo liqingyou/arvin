@@ -25,7 +25,7 @@ async function fetchContent() {
 function updateChart() {
   const charEch: ECharts = init(document.getElementById('char') as HTMLElement)
   const option: EChartsOption = {
-    darkMode: 'auto',
+    darkMode: true,
     title: {
       text: 'Online Line',
     },

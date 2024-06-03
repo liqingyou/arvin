@@ -30,7 +30,7 @@ async function fetchContent() {
 function updateChart() {
   const charEch: ECharts = init(document.getElementById('char-cho-zhi') as HTMLElement)
   const option: EChartsOption = {
-    darkMode: 'auto',
+    darkMode: true,
     title: {
       text: 'Income Line',
     },
