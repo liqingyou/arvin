@@ -15,7 +15,7 @@ interface TjOnline {
 }
 
 const chartData = ref([])
-const limitData = ref(30)
+const limitData = ref(40)
 
 async function fetchContent() {
   try {
@@ -67,10 +67,10 @@ onMounted(async () => {
 
 <template>
   <ShadowCard class="!p-[5px]">
-    <div>
-      数量:
-      <input v-model="limitData" type="number">
-    </div>
+    <!--    <div> -->
+    <!--      数量: -->
+    <!--      <input v-model="limitData" type="number"> -->
+    <!--    </div> -->
     <div id="char" />
   </ShadowCard>
 </template>
