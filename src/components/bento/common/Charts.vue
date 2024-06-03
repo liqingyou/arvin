@@ -23,7 +23,7 @@ async function fetchContent() {
 }
 
 function updateChart() {
-  const charEch: ECharts = init(document.getElementById('char') as HTMLElement)
+  const charEch: ECharts = init(document.getElementById('char') as HTMLElement, 'dark')
   const option: EChartsOption = {
     darkMode: true,
     title: {
@@ -43,7 +43,7 @@ function updateChart() {
       },
     ],
   }
-  charEch.setOption(option, dark)
+  charEch.setOption(option)
 }
 
 onMounted(async () => {

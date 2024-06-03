@@ -28,7 +28,7 @@ async function fetchContent() {
 }
 
 function updateChart() {
-  const charEch: ECharts = init(document.getElementById('char-cho-zhi') as HTMLElement)
+  const charEch: ECharts = init(document.getElementById('char-cho-zhi') as HTMLElement, 'dark')
   const option: EChartsOption = {
     darkMode: true,
     title: {
