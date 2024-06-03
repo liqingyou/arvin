@@ -19,7 +19,7 @@ const chartData = ref([])
 async function fetchContent() {
   try {
     const { data } = await axios.get('https://m3test.2loveyou.com/spin/test/player_read/online_data?limit=30&key=tj_online_1')
-    chartData.value = data.result.map((item: TjOnline) => item)
+    chartData.value = data.result.reverse().map((item: TjOnline) => item)
     updateChart() // Call updateChart after fetching new data
   }
   catch (error) {

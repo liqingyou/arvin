@@ -11,7 +11,7 @@ const chartData = ref([])
 async function fetchContent() {
   try {
     const { data } = await axios.get('https://m3test.2loveyou.com/spin/test/player_read/online_data?limit=30')
-    chartData.value = data.result.map((item: any) => ({
+    chartData.value = data.result.reverse().map((item: any) => ({
       date: item.date,
       onlineNum: item.onlineNum,
     }))
