@@ -25,7 +25,7 @@ export const SITE = {
   twitterUrl: 'https://twitter.com/ArvinnWang',
   githubId: 'pinky-pig',
   githubHome: 'https://github.com/pinky-pig',
-  weeklyUrl: 'https://weekly.mmeme.me/',
+  weeklyUrl: 'https://i.imgur.com/cvZPA0O.png',
   repo: 'pinky-pig/what-is-my-astro-blog',
   notion: 'https://hail-manatee-fc5.notion.site/a3d8b723782e48a3b3570980e83c70ae?v=0c510fa996e2492b943e7746c1bd9974',
   consoleColorFulOutput: '%cDon\'t ignore your dreams \nDon\'t work too much \nsay what you think \ncultivate friendships \nbe happy~ ',
@@ -37,6 +37,7 @@ export const SITE = {
 export const bentoCommonComponentsCfg = [
   { id: 'Profile', x: 0, y: 0, width: 2, height: 2, index: 0 },
   { id: 'Weekly', x: 2, y: 0, width: 2, height: 1, index: 0 },
+  { id: 'WeeklyZhiBan', x: 2, y: 0, width: 2, height: 2, index: 0 },
   // { id: 'Mapbox', x: 0, y: 1, width: 2, height: 1, index: 0 },
   { id: 'Dark', x: 3, y: 1, width: 1, height: 1, index: 0 },
   // { id: 'CountDown', x: 3, y: 1, width: 2, height: 1, index: 0 },
