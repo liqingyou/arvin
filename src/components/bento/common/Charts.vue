@@ -49,6 +49,7 @@ function updateChart() {
       {
         data: chartData.value.map((item: TjOnline) => item.onlineNum),
         type: 'line',
+        smooth: true,
       },
     ],
   }
