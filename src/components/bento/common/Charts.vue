@@ -15,7 +15,7 @@ interface TjOnline {
 }
 
 const chartData = ref([])
-const limitData = ref(40)
+const limitData = ref(50)
 
 async function fetchContent() {
   try {
