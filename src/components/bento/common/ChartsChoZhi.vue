@@ -82,7 +82,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <ShadowCard class="!p-[5px]">
+  <ShadowCard class="justify-between !p-[5px]">
     <div id="char-cho-zhi" class="char-cls" />
   </ShadowCard>
 </template>
@@ -91,6 +91,6 @@ onMounted(async () => {
 .char-cls {
   z-index: 100;
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 </style>
