@@ -27,12 +27,19 @@ async function fetchContent() {
   }
 }
 
+function formatNumber(value: number): string {
+  if (value >= 10000)
+    return `${(value / 10000).toFixed(0)}w`
+
+  return '0w'
+}
+
 function updateChart() {
   const charEch: ECharts = init(document.getElementById('char-cho-zhi') as HTMLElement, 'dark')
   const option: EChartsOption = {
     darkMode: true,
     title: {
-      text: 'Income Line',
+      text: 'Income',
     },
     tooltip: {
       trigger: 'axis',
@@ -46,6 +53,10 @@ function updateChart() {
     },
     yAxis: {
       type: 'value',
+      axisLabel: {
+        formatter: formatNumber,
+        margin: 10,
+      },
     },
     series: [
       {
@@ -91,6 +102,6 @@ onMounted(async () => {
 .char-cls {
   z-index: 100;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 </style>
