@@ -49,6 +49,7 @@ export const bentoCommonComponentsCfg = [
   { id: 'PageTransition', x: 4, y: 2, width: 1, height: 1, index: 0 },
   { id: 'Charts', x: 0, y: 0, width: 2, height: 2, index: 0 },
   { id: 'ChartsChoZhi', x: 0, y: 0, width: 2, height: 2, index: 0 },
+  { id: 'ChartsGp', x: 0, y: 0, width: 2, height: 2, index: 0 },
 ]
 
 /**
