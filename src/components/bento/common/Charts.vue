@@ -12,10 +12,11 @@ interface TjOnline {
   google: number
   apple: number
   jl: number
+  currentCont: number
 }
 
 const chartData = ref([])
-const limitData = ref(50)
+const limitData = ref(100)
 
 async function fetchContent() {
   try {
@@ -23,6 +24,7 @@ async function fetchContent() {
     chartData.value = data.result.reverse().map((item: TjOnline) => ({
       date: item.date,
       onlineNum: item.onlineNum,
+      currentCont: item.currentCont,
     }))
     updateChart() // Call updateChart after fetching new data
   }
@@ -47,7 +49,14 @@ function updateChart() {
     },
     series: [
       {
+        name: '在线人数',
         data: chartData.value.map((item: TjOnline) => item.onlineNum),
+        type: 'line',
+        smooth: true,
+      },
+      {
+        name: '连接数',
+        data: chartData.value.map((item: TjOnline) => item.currentCont ? item.currentCont : 0),
         type: 'line',
         smooth: true,
       },
