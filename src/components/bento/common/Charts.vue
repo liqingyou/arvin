@@ -40,6 +40,9 @@ function updateChart() {
     title: {
       text: 'Online Line',
     },
+    tooltip: {
+      trigger: 'axis',
+    },
     xAxis: {
       type: 'category',
       data: chartData.value.map((item: TjOnline) => item.date),
