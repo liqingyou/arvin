@@ -26,6 +26,7 @@ async function fetchContent() {
       date: item.date,
       onlineNum: item.onlineNum,
       currentCont: item.currentCont,
+      threadRate: item.threadRate,
     }))
     updateChart() // Call updateChart after fetching new data
   }
