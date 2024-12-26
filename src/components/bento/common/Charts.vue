@@ -13,10 +13,11 @@ interface TjOnline {
   apple: number
   jl: number
   currentCont: number
+  threadRate: number
 }
 
 const chartData = ref([])
-const limitData = ref(100)
+const limitData = ref(250)
 
 async function fetchContent() {
   try {
@@ -60,6 +61,12 @@ function updateChart() {
       {
         name: '连接数',
         data: chartData.value.map((item: TjOnline) => item.currentCont ? item.currentCont : 0),
+        type: 'line',
+        smooth: true,
+      },
+      {
+        name: 'ThreadRate',
+        data: chartData.value.map((item: TjOnline) => item.threadRate ? item.threadRate : 0),
         type: 'line',
         smooth: true,
       },
